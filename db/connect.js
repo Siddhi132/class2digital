@@ -1,4 +1,8 @@
-uri = "mongodb://localhost/c2d";
+require('dotenv').config();
+
+// use mongo url from env file
+
+const uri = process.env.MONGO_URI;
 const mongoose = require('mongoose');
 
 const connectDB = () => {
