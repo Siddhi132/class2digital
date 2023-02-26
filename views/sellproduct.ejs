@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Form</title>
+</head>
+<body>
+    <form action="/submit-product" method="post" enctype="multipart/form-data">
+        <div>
+            <label>Product Title:</label>
+            <input type="text" name="productTitle" required>
+        </div>
+        <div>
+            <label>Category:</label>
+            <input type="text" name="category" required>
+        </div>
+        <div>
+            <label>Sub-Category:</label>
+            <input type="text" name="subCategory" required>
+        </div>
+        <div>
+            <label>Tag:</label>
+            <input type="text" name="tag" required>
+        </div>
+        <div>
+            <label>Location:</label>
+            <input type="text" name="location" required>
+        </div>
+        <div>
+            <label>Date when you buy:</label>
+            <input type="date" name="dateOfPurchase" required>
+        </div>
+        <div>
+            <label>Condition rating out of 5:</label>
+            <input type="number" name="conditionRating" min="0" max="5" required>
+        </div>
+        <div>
+            <label>Price:</label>
+            <input type="number" name="price" min="0" required>
+        </div>
+        <div>
+            <label>Note:</label>
+            <textarea name="note" rows="4" cols="50"></textarea>
+        </div>
+        <div>
+            <label>Photos:</label>
+            <input type="file" name="photos" multiple required>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

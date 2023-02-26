@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/styles/stylesheet.css">
+
+  <title>student Profile</title>
+</head>
+<body>
+  <div class="container">
+    <form method="post" action="/studentProfile">
+      <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" class="form-control" id="role" name="role"  >
+      </div>
+      <div class="form-group">
+        <label for="name">name</label>
+        
+        <input type="text" class="form-control" id="name" name="name"  value="<%= user.name%>">
+    </div>
+      <div class="form-group">
+          <label for="email">Email</label>
+          <h1><%= user.email%></h1>
+          
+      </div>
+      <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" class="form-control" id="phone" name="phone"  value="<%= user.phone%>">
+      </div>
+      <div class="form-group">
+          <label for="education">Education</label>
+          <input type="text" class="form-control" id="education" name="education"  value="<%= user.education%>">
+      </div>
+      <div class="form-group">
+          <label for="subcategory">Subcategory</label>
+          <input type="text" class="form-control" id="subcategory" name="subcategory"  value="<%= user.subcategory%>">
+      </div>
+      <div class="form-group">
+          <label for="college">College</label>
+          <input type="text" class="form-control" id="college" name="college"  value="<%= user.college%>">
+      </div>
+      <div class="form-group">
+          <label for="university">University</label>
+          <input type="text" class="form-control" id="university" name="university" value="<%= user.university%>"  >
+      </div>
+      <div class="form-group">
+          <label for="branch">Branch</label>
+          <input type="text" class="form-control" id="branch" name="branch" value="<%= user.branch%>"  >
+      </div>
+      <div class="form-group">
+          <label for="semester">Semester</label>
+          <input type="text" class="form-control" id="semester" name="semester" value="<%= user.semester%>"  >
+      </div>
+      <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" class="form-control" id="state" name="state" value="<%= user.state%>"  >
+      </div>
+      <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" name="location" value="<%= user.location%>"  >
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  </div>
+</body>
+</html>

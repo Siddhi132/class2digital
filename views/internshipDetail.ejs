@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<meta charset=utf-8>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+<style>
+    :root {
+        --blue: #007bff;
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray: #6c757d;
+        --gray-dark: #343a40;
+        --primary: #007bff;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box
+    }
+
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+        margin: 0;
+        text-align: left;
+        background-color: #fff
+    }
+
+    h3,
+    h4 {
+        margin-top: 0
+    }
+
+    p {
+        margin-top: 0
+    }
+
+    ul {
+        margin-top: 0
+    }
+
+    a {
+        background-color: transparent
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline
+    }
+
+    a:not([href]) {
+        color: inherit;
+        text-decoration: none
+    }
+
+    a:not([href]):hover {
+        color: inherit;
+        text-decoration: none
+    }
+
+    img {
+        vertical-align: middle;
+        border-style: none
+    }
+
+    svg {
+        overflow: hidden;
+        vertical-align: middle
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color
+    }
+
+    button,
+    textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit
+    }
+
+    button {
+        overflow: visible
+    }
+
+    button {
+        text-transform: none
+    }
+
+    button {
+        -webkit-appearance: button
+    }
+
+    [type=button]:not(:disabled),
+    [type=reset]:not(:disabled),
+    [type=submit]:not(:disabled),
+    button:not(:disabled) {
+        cursor: pointer
+    }
+
+    textarea {
+        overflow: auto
+    }
+
+    ::-webkit-file-upload-button {
+        font: inherit;
+        -webkit-appearance: button
+    }
+
+    h4 {
+        margin-bottom: .5rem
+    }
+
+    .container-fluid {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .btn {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* background-color: transparent;
+        border: 1px solid transparent; */
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+        .btn {
+            transition: none
+        }
+    }
+
+    .btn:hover {
+        color: #212529;
+        text-decoration: none
+    }
+
+    .btn.focus,
+    .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+    }
+
+    .btn.disabled,
+    .btn:disabled {
+        opacity: .65
+    }
+
+    .fade {
+        transition: opacity .15s linear
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+        .fade {
+            transition: none
+        }
+    }
+
+    .fade:not(.show) {
+        opacity: 0
+    }
+
+    .collapse:not(.show) {
+        display: none
+    }
+
+    .dropdown-toggle {
+        white-space: nowrap
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent
+    }
+
+    .dropdown-toggle:empty::after {
+        margin-left: 0
+    }
+
+    .btn-group {
+        position: relative;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        vertical-align: middle
+    }
+
+    .btn-group>.btn {
+        position: relative;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto
+    }
+
+    .btn-group-vertical>.btn:hover,
+    .btn-group>.btn:hover {
+        z-index: 1
+    }
+
+    .btn-group-vertical>.btn.active,
+    .btn-group-vertical>.btn:active,
+    .btn-group-vertical>.btn:focus,
+    .btn-group>.btn.active,
+    .btn-group>.btn:active,
+    .btn-group>.btn:focus {
+        z-index: 1
+    }
+
+    .btn-group>.btn-group:not(:first-child),
+    .btn-group>.btn:not(:first-child) {
+        margin-left: -1px
+    }
+
+    .btn-group>.btn-group:not(:last-child)>.btn,
+    .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    .btn-group>.btn-group:not(:first-child)>.btn,
+    .btn-group>.btn:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+    }
+
+    .nav-link {
+        padding: .5rem 1rem
+    }
+
+    .nav-link:focus,
+    .nav-link:hover {
+        text-decoration: none
+    }
+
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify
+    }
+
+    .navbar-brand {
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap
+    }
+
+    .navbar-brand:focus,
+    .navbar-brand:hover {
+        text-decoration: none
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    @media (min-width:768px) {
+        .navbar-expand-md {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start
+        }
+
+        .navbar-expand-md .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row
+        }
+
+        .navbar-expand-md .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem
+        }
+
+        .navbar-expand-md .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto
+        }
+    }
+
+    @-webkit-keyframes progress-bar-stripes {
+        from {
+            background-position: 1rem 0
+        }
+
+        to {
+            background-position: 0 0
+        }
+    }
+
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 1rem 0
+        }
+
+        to {
+            background-position: 0 0
+        }
+    }
+
+    .toast {
+        overflow: hidden;
+        font-size: .875rem;
+        background-color: rgba(255, 255, 255, .85);
+        background-clip: padding-box;
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: .25rem
+    }
+
+    .toast:not(:last-child) {
+        margin-bottom: .75rem
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: 0
+    }
+
+    @-webkit-keyframes spinner-border {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes spinner-border {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @-webkit-keyframes spinner-grow {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+
+        50% {
+            opacity: 1
+        }
+    }
+
+    @keyframes spinner-grow {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+
+        50% {
+            opacity: 1
+        }
+    }
+
+    @supports ((position:-webkit-sticky) or (position:sticky)) {
+        .sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020
+        }
+    }
+</style>
+<title>Web Development Internship in Mumbai at Rentkar-Switch To Share | Internshala</title>
+
+<style>
+    .btn:active,
+    .btn:active:focus,
+    .btn:focus,
+    .btn:hover,
+    .modal.ds-modal-medium .modal-dialog .modal-content .modal-header .close:focus {
+        outline: 0
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom .clear {
+        clear: both
+    }
+
+
+
+    [class*=" ic-"],
+    [class^=ic-] {
+        font-family: internshala-icons !important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale
+    }
+
+    [class*=" ic-24-"],
+    [class^=ic-24-] {
+        font-size: 24px
+    }
+
+    [class^=ic-16-] {
+        font-size: 16px
+    }
+
+    .heading_6_6 {
+        font-size: 14px;
+        line-height: 1.42857143;
+        font-weight: 600
+    }
+
+    .ic-16-calendar:before {
+        content: ""
+    }
+
+    .ic-16-currency-inr:before {
+        content: ""
+    }
+
+    .ic-16-external-link:before {
+        content: ""
+    }
+
+    .ic-16-hired:before {
+        content: ""
+    }
+
+    .ic-16-hourglass:before {
+        content: ""
+    }
+
+    .ic-16-job:before {
+        content: ""
+    }
+
+    .ic-16-map-pin:before {
+        content: ""
+    }
+
+    .ic-16-money:before {
+        content: ""
+    }
+
+    .ic-16-play-circle:before {
+        content: ""
+    }
+
+    .ic-16-reschedule:before {
+        content: ""
+    }
+
+    .ic-16-s15-trend:before {
+        content: ""
+    }
+
+    .ic-16-suggested-time:before {
+        content: ""
+    }
+
+    .ic-24-filled-down-arrow:before {
+        content: ""
+    }
+
+    .ic-24-instagram:before {
+        content: ""
+    }
+
+    .ic-24-linkedin:before {
+        content: ""
+    }
+
+    .ic-24-playstore:before {
+        content: ""
+    }
+
+    .ic-24-profiles:before {
+        content: ""
+    }
+
+    .ic-24-share:before {
+        content: ""
+    }
+
+    .ic-24-twitter:before {
+        content: ""
+    }
+
+
+    @media (max-width:767px) {
+        .heading_6_6 {
+            font-size: 14px;
+            line-height: 1.42857143;
+            font-weight: 600
+        }
+    }
+
+    @media (max-width:767px) {
+        .heading_5_5 {
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 600
+        }
+    }
+
+    .heading_5_5 {
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: 600
+    }
+
+    .heading_4_5 {
+        font-weight: 600
+    }
+
+    @media (max-width:767px) {
+        .heading_4_5 {
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 600
+        }
+    }
+
+    .heading_2_4 {
+        font-size: 28px;
+        line-height: 1.28571429;
+        font-weight: 600
+    }
+
+    @media (max-width:767px) {
+        .heading_2_4 {
+            font-size: 18px;
+            line-height: 1.33333333;
+            font-weight: 600
+        }
+    }
+
+    .heading_6 {
+        font-size: 14px;
+        line-height: 1.42857143;
+        font-weight: 600
+    }
+
+    .body-main {
+        font-size: 14px;
+        line-height: 1.57142857
+    }
+
+    .body-main {
+        font-weight: 400
+    }
+
+    .notification {
+        z-index: 1501;
+        width: 100%;
+        font-weight: 600;
+        text-align: center;
+        background-color: #BDF3FF;
+        color: #006BC2;
+        padding: 8px
+    }
+
+    @media (max-width:767px) {
+        .notification {
+            padding: 12px 16px
+        }
+    }
+
+    .modal.internshala-modal {
+        z-index: 1501
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+        0% {
+            -webkit-transform: rotate(0)
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg)
+        }
+    }
+
+    @keyframes nprogress-spinner {
+        0% {
+            transform: rotate(0)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    #header {
+        height: 72px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15);
+        margin-bottom: 2px
+    }
+
+    #header .max-width-container {
+        height: 100%
+    }
+
+    #header .max-width-container .navbar {
+        padding: 0;
+        height: 100%;
+        justify-content: space-between
+    }
+
+    #header .max-width-container .navbar .brand_container {
+        display: flex;
+        height: 100%
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li.nav-item .is_icon_header {
+        margin-right: -6px
+    }
+
+    #header .max-width-container .navbar .brand_container .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 8px;
+        height: 100%;
+        display: flex;
+        align-items: center
+    }
+
+    @media (max-width:992px) {
+        #header .max-width-container .navbar .brand_container .navbar-brand {
+            padding-bottom: 12px
+        }
+    }
+
+    #header .max-width-container .navbar .brand_container .navbar-brand img {
+        width: 112px
+    }
+
+    #header .max-width-container .navbar .collapse {
+        height: 100%;
+        justify-content: flex-end
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav {
+        position: relative;
+        height: 100%;
+        font-style: normal;
+        font-weight: 600
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li.nav-item {
+        display: flex;
+        align-items: center
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li.nav-item.internship_container_hover,
+    #header .max-width-container .navbar .collapse .navbar-nav li.nav-item.job_container_hover,
+    #header .max-width-container .navbar .collapse .navbar-nav li.nav-item.training_container_hover {
+        z-index: 1035
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li a {
+        position: relative;
+        color: #484848;
+        font-size: 14px;
+        font-family: Inter, sans-serif;
+        font-weight: 500
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header .max-width-container .navbar .collapse .navbar-nav li a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li a.nav-link {
+        padding-left: 16px;
+        padding-right: 16px;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        height: 100%;
+        display: flex;
+        align-items: center
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #header .max-width-container .navbar .collapse .navbar-nav li a.nav-link#post_fresher_job_form_link .new,
+        #header .max-width-container .navbar .collapse .navbar-nav li a.nav-link.post .new {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav li a:hover {
+        color: #008BDC;
+        background: unset
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav .dropdown {
+        position: static
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header .max-width-container .navbar .collapse .navbar-nav .dropdown .menu_dropdown .dropdown-inner .dropdown-inner-footer a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header .max-width-container .navbar .collapse .navbar-nav .dropdown #profile-dropdown .dropdown-inner .dropdown-inner-container .inner-dropdown .dropdown-menu-part .profile_container .profile_name span {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header .max-width-container .navbar .collapse .navbar-nav .dropdown #tnp-dropdown .dropdown-inner .dropdown-inner-container .inner-dropdown .dropdown-menu-part .contact_container .contact_name {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav .dropdown-toggle.trainings_link .contest {
+        background-color: #FF8C00;
+        color: #fff;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        padding: 3px 6px;
+        margin-left: 6px;
+        letter-spacing: .5px
+    }
+
+    #header .max-width-container .navbar .collapse .navbar-nav .dropdown-toggle::after {
+        display: none !important
+    }
+
+    @media (max-width:992px) {
+        #header .max-width-container .navbar .brand_container .offer_hamburger_dot svg {
+            vertical-align: baseline
+        }
+
+        #header .navbar-collapse.collapse {
+            display: none !important
+        }
+
+        #header .navbar-collapse {
+            border-top: 1px solid transparent;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1)
+        }
+
+        #header .navbar-nav {
+            float: none !important;
+            margin: 7.5px -15px
+        }
+
+        #header .navbar-nav>li {
+            float: none
+        }
+
+        #header .navbar-nav>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px
+        }
+    }
+
+    #header .layer {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        z-index: -1000;
+        opacity: 0;
+        transition: opacity .3s ease-in-out, z-index 0s ease-in-out .3s
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header .sidenav .ham_menu_items .offer {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #header .sidenav .ham_menu_items .ham_inner_title,
+        #header .sidenav .ham_menu_items .ham_main_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #header #mySidenav .profile_container .profile_details #profile_name {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #footer {
+        position: absolute;
+        bottom: -1px;
+        width: 100%
+    }
+
+    .generic_footer {
+        background-color: #333;
+        color: #fff;
+        font-size: 14px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container,
+    .generic_footer .container-fluid .max-width-container .footer_container {
+        margin-top: 40px;
+        margin-bottom: 16px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: space-between
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container .desktop-footer-1255-hide {
+        display: block
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container #internship_by_place,
+    .generic_footer .container-fluid .max-width-container .footer_container #internship_by_stream {
+        width: 100%;
+        max-width: 220px
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container #jobs_by_places {
+        width: 100%;
+        max-width: 160px
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container #jobs_by_stream {
+        width: 100%;
+        max-width: 200px
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container #trainings-container {
+        width: 100%;
+        max-width: 260px;
+        padding-left: 40px
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-heading {
+        font-size: 14px;
+        line-height: 1.42857143;
+        font-weight: 600;
+        margin-bottom: 16px
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-heading #trainings-footer a {
+        font-size: 16px;
+        line-height: 1.25;
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        color: #fff
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        .generic_footer .container-fluid .max-width-container #footer-about-us-container .footer-column .footer-list .footer-list-heading #trainings-footer a,
+        .generic_footer .container-fluid .max-width-container #footer-middle-section .footer-column .footer-list .footer-list-heading #trainings-footer a,
+        .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-heading #trainings-footer a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container .footer-column .footer-list .footer-list-heading #trainings-footer a:hover,
+    .generic_footer .container-fluid .max-width-container #footer-middle-section .footer-column .footer-list .footer-list-heading #trainings-footer a:hover,
+    .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-heading #trainings-footer a:hover {
+        text-decoration: none
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container .footer-column .footer-list .footer-list-item,
+    .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-item {
+        padding-bottom: 8px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container .footer-column .footer-list .footer-list-item a,
+    .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-item a {
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+        color: #fff
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        .generic_footer .container-fluid .max-width-container #footer-about-us-container .footer-column .footer-list .footer-list-item a,
+        .generic_footer .container-fluid .max-width-container #footer-middle-section .footer-column .footer-list .footer-list-item a,
+        .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-item a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .generic_footer .container-fluid .max-width-container .footer_container .offer {
+        background-color: #FF8C00;
+        color: #fff;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: .5px;
+        padding: 3px;
+        margin-left: 4px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container {
+        display: flex;
+        border-top: 1px solid #666;
+        margin-top: 24px;
+        padding-top: 24px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container #about_internshala_center,
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container #about_internshala_left {
+        width: 100%;
+        max-width: 220px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container #about_internshala_right {
+        width: 100%;
+        max-width: 200px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container #dummy-container-1 {
+        width: 100%;
+        max-width: 160px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-about-us-container #dummy-container-2 {
+        width: 100%;
+        max-width: 260px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom {
+        border-top: 0;
+        padding-top: 24px;
+        padding-bottom: 40px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #android_app_container {
+        display: inline-block;
+        color: #fff;
+        margin-right: 32px;
+        border: 1px solid #fff;
+        padding: 8px 12px;
+        border-radius: 4px;
+        float: left
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #android_app_container i {
+        margin-right: 1px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #android_app_container span {
+        position: relative;
+        bottom: 6px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #social_media_container {
+        display: inline-block;
+        float: left;
+        padding: 9px 0
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #social_media_container i {
+        margin-right: 16px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #social_media_container a {
+        color: #fff
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #social_media_container .img-icon {
+        max-width: 24px;
+        margin-right: 16px
+    }
+
+    .generic_footer .container-fluid .max-width-container #footer-bottom #copyright {
+        display: inline-block;
+        float: right;
+        padding: 9px 0
+    }
+
+    @media (max-width:1255px) {
+        .generic_footer .container-fluid .max-width-container .footer_container .desktop-footer-1255-hide {
+            display: none
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container #internship_by_place {
+            width: 100%;
+            max-width: 200px
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container #internship_by_stream {
+            width: 100%;
+            max-width: 208px
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container #trainings-container {
+            width: 100%;
+            max-width: 260px
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container #jobs_by_places {
+            width: 100%;
+            max-width: 200px
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container #jobs_by_stream {
+            width: 100%;
+            max-width: 208px
+        }
+
+        .generic_footer .container-fluid .max-width-container #footer-about-us-container {
+            display: none
+        }
+
+        .generic_footer .container-fluid .max-width-container #footer-bottom {
+            border-top: 1px solid #666
+        }
+    }
+
+    @media (max-width:991px) {
+        .generic_footer .container-fluid .max-width-container .footer_container {
+            display: block;
+            margin-top: 24px;
+            margin-bottom: 12px
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container .desktop-footer {
+            display: none !important
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container .footer-column {
+            display: block;
+            max-width: 100%
+        }
+
+        .generic_footer .container-fluid .max-width-container .footer_container .footer-column .footer-list .footer-list-item {
+            padding-bottom: 12px
+        }
+    }
+
+    .btn>[class^=ic-],
+    a [class*=" ic-"],
+    a>[class^=ic-] {
+        vertical-align: middle
+    }
+
+    @media (max-width:648px) {
+        .generic_footer .container-fluid .max-width-container #footer-bottom {
+            border-top: 0;
+            padding-top: 0;
+            padding-bottom: 0
+        }
+
+        .generic_footer .container-fluid .max-width-container #footer-bottom #android_app_container {
+            float: none
+        }
+
+        .generic_footer .container-fluid .max-width-container #footer-bottom #social_media_container {
+            margin-top: 28px;
+            margin-bottom: 28px;
+            padding: 0;
+            display: block;
+            float: none
+        }
+
+        .generic_footer .container-fluid .max-width-container #footer-bottom #copyright {
+            float: none;
+            display: block;
+            padding-top: 12px;
+            padding-bottom: 24px;
+            border-top: 1px solid #666
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #footer.employer_footer #employer_footer .max-width-container .elements .element a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:767px) {
+        #about_internshala_left {
+            margin-right: 80px;
+            flex-shrink: 0
+        }
+    }
+
+    .btn {
+        font-weight: 600;
+        line-height: 1.14285714;
+        font-size: 14px
+    }
+
+    .btn.btn-large {
+        background: #00A5EC;
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px
+    }
+
+    .btn.btn-large:active,
+    .btn.btn-large:focus,
+    .btn.btn-large:hover,
+    .btn.btn-large:not(.disabled):active,
+    .btn.btn-large:not(.disabled):focus,
+    .btn.btn-large:not(.disabled):hover {
+        background: #008BDC;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .08) !important;
+        border: 1px solid #008BDC
+    }
+
+    a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #008BDC;
+        cursor: pointer;
+        line-height: 1.14285714
+    }
+
+    a:focus,
+    a:hover {
+        color: #006BC2;
+        text-decoration: none;
+        outline: 0
+    }
+
+    a:not([href]) {
+        color: #008BDC
+    }
+
+    a:not([href]):focus,
+    a:not([href]):hover {
+        color: #006BC2;
+        text-decoration: none;
+        outline: 0
+    }
+
+    button:focus {
+        outline: 0
+    }
+
+    @supports (font-variation-settings:normal) {
+        label {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .form-control {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .popover {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .ui-widget {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .ui-datepicker {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .ui-datepicker table th {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month,
+        .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    body,
+    html {
+        height: 100%
+    }
+
+    .max-width-container {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    body {
+        color: #333;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        line-height: 1.57142857;
+        font-weight: 400
+    }
+
+    @supports (font-variation-settings:normal) {
+        body {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #wrapper {
+        width: 100%;
+        position: relative
+    }
+
+    .max-width-container {
+        max-width: 1224px
+    }
+
+    .container-fluid {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+
+    .internshala-toast {
+        position: fixed;
+        top: 0;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        z-index: 100000;
+        background: 0 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        border: none;
+        opacity: 1
+    }
+
+    @media (max-width:767px) {
+        .internshala-toast {
+            padding-left: 16px;
+            padding-right: 16px
+        }
+    }
+
+    .internshala-toast .toast-body-container {
+        display: inline-block;
+        box-sizing: border-box
+    }
+
+    .internshala-toast .toast-body-container .toast-body {
+        display: flex;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 10px
+    }
+
+    .internshala-toast.loading_toast .toast-body-container .toast-body {
+        background: #EAFCFF;
+        border: 1px solid #8FEAFE;
+        color: #006BC2
+    }
+
+    .internshala-toast.black_bottom_toast {
+        bottom: 24px;
+        top: auto;
+        max-width: 100%;
+        color: #fff
+    }
+
+    @supports (font-variation-settings:normal) {
+        #login-modal .modal-dialog .modal-content .modal-body #user-menu-container #user-menu .user-menu-item {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #login-modal .modal-dialog .modal-content .modal-body .google_login {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #login-modal .modal-dialog .modal-content .modal-body .helper .text2 {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #employer_blocked_error_modal .modal-dialog .modal-content .heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:991px) {
+        @supports (font-variation-settings:normal) {
+            #employer_blocked_error_modal .modal-dialog .modal-content .heading {
+                font-family: "Inter var", sans-serif
+            }
+        }
+    }
+
+    @media (max-width:575px) {
+        @supports (font-variation-settings:normal) {
+            #employer_blocked_error_modal .modal-dialog .modal-content .heading1 {
+                font-family: "Inter var", sans-serif
+            }
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #employer_blocked_error_modal .modal-dialog .modal-content .main_content .sub_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #employer_blocked_error_modal .modal-dialog .modal-content .main_content .error_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .alert a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 24px
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer .other_label_container {
+        display: flex
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer .posted_by_container {
+        display: flex;
+        margin-bottom: 12px
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer .status-container {
+        margin-right: 12px
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer .status-container .status.status-inactive {
+        color: #666;
+        background-color: #EEE
+    }
+
+    .detail_view .individual_internship .internship_meta .tags_container_outer .status-container .status.status-small {
+        font-weight: 400
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship .internship_meta .tags_container_outer {
+            margin-top: 20px;
+            flex-flow: column-reverse
+        }
+
+        .detail_view .individual_internship .internship_meta .tags_container_outer .posted_by_container {
+            margin-top: 20px;
+            margin-bottom: 8px
+        }
+    }
+
+    .detail_view .individual_internship .button_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_list_container .individual_internship .internship_meta .individual_internship_header .profile a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_list_container .individual_internship .internship_meta .individual_internship_header .company_name .ngo_tag {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_list_container .individual_internship .internship_meta .individual_internship_header .company_name a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_list_container .individual_internship .internship_meta .individual_internship_details #location_names a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_list_container .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .round_tabs {
+        background: #F8F8F8;
+        color: #666;
+        padding: 6px 12px;
+        border-radius: 14px;
+        margin-right: 16px;
+        margin-bottom: 8px;
+        line-height: 16px
+    }
+
+    .internship_details .section_heading {
+        margin-top: 16px;
+        margin-bottom: 8px
+    }
+
+    .internship_details .training_skills_container {
+        margin-top: 16px
+    }
+
+    .internship_details .training_skills_container .training_skills_container_heading {
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 8px
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_details .training_skills_container .training_skills_container_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .internship_details .training_skills_container .training_link_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .internship_details .training_skills_container .training_link_container .training_link {
+        margin-right: 24px;
+        margin-bottom: 8px
+    }
+
+    .internship_details .text-container {
+        word-break: break-word;
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        padding-bottom: 8px;
+        color: #484848
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_details .text-container {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .internship_details .text-container a {
+        font-family: Inter, sans-serif;
+        font-weight: 400
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_details .text-container a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .internship_details .text-container p {
+        margin-bottom: 4px
+    }
+
+    .internship_details .text-container p:nth-last-of-type(1) {
+        margin-bottom: 0
+    }
+
+    .internship_details .text-container.website_link a {
+        font-size: 12px;
+        line-height: 1.5
+    }
+
+    .internship_details .text-container.website_link a i {
+        margin-left: 4px;
+        position: relative;
+        top: -1px
+    }
+
+    @supports (font-variation-settings:normal) {
+        .internship_details .text-container.who_can_apply p a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .internship_details .text-container.about_company_text_container {
+        padding-bottom: 0
+    }
+
+    .internship_details .round_tabs_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .internship_details .buttons_container {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        align-items: center;
+        flex-direction: column
+    }
+
+    .internship_details .buttons_container .btn {
+        max-width: 271px;
+        border-radius: 4px;
+        padding: 12px 32px;
+        border: none;
+        min-width: 146px
+    }
+
+    .internship_details .buttons_container a {
+        margin-bottom: 24px
+    }
+
+    .internship_details .buttons_container a .btn {
+        margin-bottom: 0
+    }
+
+    .internship_details .buttons_container a .btn:hover {
+        background: #008BDC;
+        box-shadow: none !important;
+        border: none
+    }
+
+    .internship_details .activity_section {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        border: 1px solid #EEE;
+        border-radius: 8px;
+        padding: 16px 16px 8px
+    }
+
+    .internship_details .activity_section .heading_activity {
+        color: #484848;
+        margin-bottom: 8px
+    }
+
+    .internship_details .activity_section .activity_container {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .internship_details .activity_section .activity_container .activity {
+        display: flex;
+        align-items: center;
+        margin-right: 24px;
+        padding-bottom: 8px;
+        color: #484848
+    }
+
+    .internship_details .activity_section .activity_container .activity i {
+        margin-right: 4px
+    }
+
+    @supports (font-variation-settings:normal) {
+        .probation-salary-container .probation-salary-label {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .probation-salary-container .probation-text2 {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .main_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .sub_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .sub_heading .bold {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:991px) {
+        @supports (font-variation-settings:normal) {
+            #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .sub_heading .bold {
+                font-family: "Inter var", sans-serif
+            }
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .features_container .heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .left_container .features_container .features .feature .text {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .plan_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:575px) {
+        @supports (font-variation-settings:normal) {
+            #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .plan_heading {
+                font-family: "Inter var", sans-serif
+            }
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .premium_plan_option .label_content {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .premium_plan_option .label_content .price_container_with_discount .price {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .premium_plan_option .label_content .price_container_with_discount .per_post_plan_price {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .premium_plan_option .label_content .pi_discount_timer_container .premium_modal_discount_timer {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .pay_per_post_plan .premium_plan_option .label_content .pi_discount_timer_container .premium_modal_discount_timer .icon {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plan_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .sub_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plans .premium_plan_option .label_content .label_tag {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plans .premium_plan_option .heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plans .premium_plan_option .price_details .price {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plans .premium_plan_option .price_details .original {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .subscription_plan_container .subscription_plans .premium_plan_option .offer {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #premium_prompt .modal-dialog .modal-content .modal-body .premium_nudge_container .right_container .btn_container .btn {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .subscription_alert .content .body .resume_guide {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #content {
+        padding: 0
+    }
+
+    @supports (font-variation-settings:normal) {
+        #content #content-inner .max-width-container #registration-container-right .google_login {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #content #content-inner .max-width-container #registration-container-right #form-container .helper .text2 {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #content #content-inner .max-width-container #registration-container-right #form-container #login-link-container {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #content #content-inner .max-width-container #registration-container-right #form-container #captcha_note {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:575px) {
+        .navbar .brand_container .navbar-brand {
+            padding-left: 8px
+        }
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden;
+        z-index: 10000000
+    }
+
+    .grecaptcha-badge iframe {
+        display: block !important
+    }
+
+    .status-container {
+        display: flex
+    }
+
+    .status-container .status {
+        border-radius: 4px;
+        align-items: center;
+        text-align: center
+    }
+
+    .status-container .status.status-small {
+        padding: 2px 6px;
+        font-size: 12px;
+        line-height: 1.33333333;
+        height: 20px;
+        display: flex
+    }
+
+    .status-container .status.status-small i {
+        margin-right: 4px;
+        margin-left: 0;
+        align-self: center
+    }
+
+    .status-container .status.status-success {
+        background: #F1FFE5;
+        color: #13800D
+    }
+
+    .status-container .status.status-inactive {
+        background: #F8F8F8
+    }
+
+    @supports (font-variation-settings:normal) {
+        .chosen-container-multi .chosen-choices li.search-field input[type=text] {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .similar_internship_list_container .individual_internship .internship_meta .individual_internship_header .profile a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .similar_internship_list_container .individual_internship .internship_meta .individual_internship_header .company_name .ngo_tag {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .similar_internship_list_container .individual_internship .internship_meta .individual_internship_header .company_name a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .similar_internship_list_container .individual_internship .internship_meta .individual_internship_details #location_names a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        .similar_internship_list_container .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal .modal-content .modal-header .heading .profile,
+        #easy_apply_modal .modal-content .modal-header .heading .profile {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal .modal-content .modal-body #assessment_questions h4,
+        #easy_apply_modal .modal-content .modal-body #assessment_questions h4 {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal .modal-content .modal-body #assessment_questions #availability_heading,
+        #easy_apply_modal .modal-content .modal-body #assessment_questions #availability_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal .modal-content .modal-body #assessment_questions .copy_cover_letter_container .copy_cover_letter_button a,
+        #easy_apply_modal .modal-content .modal-body #assessment_questions .copy_cover_letter_container .copy_cover_letter_button a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal_close_confirm .modal-content .modal-body .heading,
+        #easy_apply_modal_close_confirm .modal-content .modal-body .heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+
+        #application_modal_close_confirm .modal-content .modal-body label,
+        #easy_apply_modal_close_confirm .modal-content .modal-body label {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #content .container-fluid .max-width-container #details_container {
+        max-width: 940px;
+        margin: 48px auto
+    }
+
+    @media (max-width:991px) {
+        #content .container-fluid .max-width-container #details_container.to_show_border {
+            margin-top: 40px
+        }
+    }
+
+    @media (max-width:767px) {
+        #content .container-fluid .max-width-container #details_container.to_show_border .individual_internship {
+            border-top: 0
+        }
+    }
+
+    @supports (font-variation-settings:normal) {
+        #content .container-fluid .max-width-container #details_container .backToInternship a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    #content .container-fluid .max-width-container #details_container .heading_title {
+        text-align: center;
+        margin-bottom: 24px
+    }
+
+    #content .container-fluid .max-width-container #details_container .detail_view {
+        border: 1px solid #EEE;
+        border-radius: 6px;
+        padding: 24px 24px 0
+    }
+
+    #content .container-fluid .max-width-container #details_container .detail_view .internship_details {
+        border-top: 1px solid #EEE
+    }
+
+    #content .container-fluid .max-width-container #details_container #detail-banner-container {
+        margin: 0 0 32px;
+        max-width: 940px
+    }
+
+    #content .container-fluid .max-width-container #details_container #detail-banner-container.to_show_in_desktop {
+        display: block
+    }
+
+    @media (max-width:767px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container {
+            margin-bottom: 16px;
+            margin-top: 24px
+        }
+
+        #content .container-fluid .max-width-container #details_container #detail-banner-container:before {
+            border-top: 4px solid #EEE;
+            position: absolute;
+            width: 100%;
+            content: "";
+            display: block;
+            margin-left: -16px
+        }
+
+        #content .container-fluid .max-width-container #details_container #detail-banner-container.to_show_in_desktop {
+            display: none
+        }
+
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image {
+            padding-top: 16px
+        }
+    }
+
+    @media (max-width:575px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container {
+            margin-bottom: 8px
+        }
+    }
+
+    #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image {
+        text-align: center;
+        max-width: 940px;
+        margin: 0 auto
+    }
+
+    #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img {
+        display: block;
+        border-radius: 8px
+    }
+
+    #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img.fsw {
+        width: 100%;
+    }
+
+    @media (max-width:991.98px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img.fsw {}
+    }
+
+    @media (max-width:767.98px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img.fsw {}
+    }
+
+    @media (max-width:575.98px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img.fsw {}
+    }
+
+    @media (max-width:360.98px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img.fsw {}
+    }
+
+    @media (max-width:767px) {
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image {
+            height: auto;
+            width: 100%
+        }
+
+        #content .container-fluid .max-width-container #details_container #detail-banner-container #detail-banner-image img {
+            margin: auto;
+            border-radius: 8px
+        }
+    }
+
+    @media (max-width:991px) {
+        #content .container-fluid .max-width-container #details_container {
+            max-width: 600px
+        }
+
+        #content .container-fluid .max-width-container #details_container .detail_view {
+            padding: 24px 16px 0
+        }
+    }
+
+    @media (max-width:767px) {
+        #content .container-fluid .max-width-container #details_container {
+            max-width: 100%;
+            margin-top: 24px
+        }
+
+        #content .container-fluid .max-width-container #details_container .heading_title {
+            text-align: left
+        }
+
+        #content .container-fluid .max-width-container #details_container .detail_view {
+            border: none;
+            padding: 0
+        }
+
+        #content .container-fluid .max-width-container #details_container .detail_view .internship_details {
+            border-top: 1px solid #EEE;
+            margin: 0-16px;
+            padding: 8px 16px 0
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .actively_hiring_badge {
+        width: fit-content;
+        width: -moz-fit-content;
+        border: 1px solid #ddd;
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        gap: 4px
+    }
+
+    .detail_view .individual_internship .internship_meta .actively_hiring_badge i.ic-16-s15-trend {
+        color: #008BDC;
+        margin-right: 2px
+    }
+
+    .detail_view .individual_internship .internship_meta .actively_hiring_badge span {
+        font-size: 12px;
+        line-height: 1.33333333;
+        font-weight: 500;
+        color: #484848
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header {
+        margin-bottom: 20px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .profile {
+        margin-bottom: 8px
+    }
+
+    @supports (font-variation-settings:normal) {
+        .detail_view .individual_internship .internship_meta .individual_internship_header .profile a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_header .profile {
+            margin-bottom: 4px
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .company_name {
+        display: flex;
+        align-items: center
+    }
+
+    @supports (font-variation-settings:normal) {
+        .detail_view .individual_internship .internship_meta .individual_internship_header .company_name .ngo_tag {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .company_name a {
+        color: #8A8A8A;
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        line-height: 1.43
+    }
+
+    @supports (font-variation-settings:normal) {
+        .detail_view .individual_internship .internship_meta .individual_internship_header .company_name a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .internship_logo {
+        margin-left: 16px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .internship_logo img {
+        max-width: 104px;
+        max-height: 48px;
+        color: transparent
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details {
+        margin-bottom: 8px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details #location_names {
+        line-height: 16px;
+        display: flex;
+        margin-bottom: 20px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details #location_names a {
+        line-height: 22px;
+        color: #333;
+        font-family: Inter, sans-serif;
+        font-weight: 400
+    }
+
+    @supports (font-variation-settings:normal) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details #location_names a {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details #location_names i {
+        color: #8A8A8A;
+        margin-right: 4px;
+        margin-top: 2px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container {
+        display: flex
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_header .internship_logo img {
+            max-width: 72px
+        }
+
+        .detail_view .individual_internship .internship_meta .individual_internship_details #location_names {
+            margin-bottom: 0
+        }
+
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container {
+            flex-direction: column
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item.stipend_container .item_body .stipend {
+        display: flex;
+        align-items: center
+    }
+
+    @media (max-width:575px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item {
+            margin-right: 24px
+        }
+
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item.apply_by {
+            margin-right: 0
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        color: #8A8A8A;
+        display: flex;
+        font-family: Inter, sans-serif;
+        font-weight: 500
+    }
+
+    @supports (font-variation-settings:normal) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item {
+            margin-top: 20px;
+            display: flex
+        }
+
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading span {
+            display: none
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_heading i {
+        margin-right: 4px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_body {
+        display: flex;
+        align-items: center;
+        margin-top: 5px
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_body {
+            margin-top: 0;
+            line-height: 16px
+        }
+
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item .item_body .start_immediately_desktop {
+            display: none
+        }
+    }
+
+    .detail_view .individual_internship {
+        padding: 0;
+        margin-bottom: 24px
+    }
+
+    @media (max-width:767px) {
+        .detail_view .individual_internship {
+            width: auto;
+            border-top: 4px solid #EEE;
+            margin: 0-16px;
+            padding: 16px 16px 20px
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_header .profile {
+        font-size: 16px;
+        line-height: 20px
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item {
+        margin-right: 80px
+    }
+
+    @media (max-width:991px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item {
+            margin-right: 40px
+        }
+    }
+
+    @media (max-width:575px) {
+        .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item {
+            margin-right: 24px
+        }
+    }
+
+    .detail_view .individual_internship .internship_meta .individual_internship_details .internship_other_details_container .other_detail_item_row .other_detail_item.apply_by {
+        margin-right: 0
+    }
+
+    .applications_message_container {
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #484848;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center
+    }
+
+    @supports (font-variation-settings:normal) {
+        .applications_message_container {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .applications_message_container .application_icon {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        display: flex;
+        font-family: Inter, sans-serif;
+        font-weight: 500
+    }
+
+    @supports (font-variation-settings:normal) {
+        .applications_message_container .application_icon {
+            font-family: "Inter var", sans-serif
+        }
+    }
+
+    .applications_message_container .application_icon i {
+        color: #8A8A8A;
+        margin-right: 4px
+    }
+
+    .dropdown-menu-container {
+        margin-top: 16px
+    }
+
+    .dropdown-menu-container .btn-group .btn {
+        min-width: auto;
+        width: 32px;
+        height: 32px;
+        border-radius: 50% !important;
+        color: #008BDC;
+        padding: 0
+    }
+
+    .dropdown-menu-container .btn-group .btn:hover,
+    .dropdown-menu-container .btn-group.show .btn {
+        background: #EEE;
+        box-shadow: none
+    }
+
+    @supports (font-variation-settings:normal) {
+        .dropdown-menu-container .menu-right a .dropdown-item {
+            font-family: "Inter var", sans-serif
+        }
+    }
+</style>
+<link rel=image href=https://internshala.com/static/images/internshala_og_image_new.png>
+
+<style>
+    .sf-hidden {
+        display: none !important
+    }
+</style>
+
+<style>
+    img[src="data:,"],
+    source[src="data:,"] {
+        display: none !important
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="successalert"></div>
+    <div id=wrapper style=min-height:1312px>
+
+        <div id=content>
+            <div class=container-fluid>
+                <div class=max-width-container>
+                    <div id=details_container class=to_show_border>
+
+                        <div id=detail-banner-container class=to_show_in_desktop>
+                            <div id=detail-banner-image data-category=SO_FSW_detail data-label=banner data-action=view>
+                                <a href="https://trainings.internshala.com/full-stack-web-development-specialization/?utm_source=is_web_details_page"
+                                    target=_blank>
+                                    <img src=data:, class=fsw>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="heading_2_4 heading_title">
+                            <%= specInternship.specInternship[0].position %>
+                        </div>
+
+                        <div id=detail-banner-container class="to_show_in_mobile sf-hidden">
+
+                        </div>
+                        <div class=detail_view>
+
+                            <div class="container-fluid individual_internship visibilityTrackerItem"
+                                id=individual_internship_2060529 internshipid=2060529>
+                                <div class=internship_meta>
+                                    <div class=actively_hiring_badge>
+                                        <i class=ic-16-s15-trend></i>
+                                        <span>
+                                            <%= specInternship.specInternship[0].status %>
+                                        </span>
+                                    </div>
+                                    <div class=individual_internship_header>
+                                        <div class=company>
+                                            <h3 class="heading_4_5 profile">
+                                                <span class=profile_on_detail_page>
+                                                    <%= specInternship.specInternship[0].position %>
+                                                </span>
+                                            </h3>
+                                            <h4 class="heading_6 company_name">
+                                                <div class=company_and_premium>
+                                                    <a class="link_display_like_text view_detail_button"
+                                                        href=https://internshala.com/internships/internship-at-Rentkar-Switch%20To%20Share>
+                                                        <%= specInternship.specInternship[0].companyName %>
+                                                    </a>
+                                                </div>
+                                            </h4>
+                                        </div>
+                                        <div class=internship_logo>
+
+                                        </div>
+                                    </div>
+                                    <div class="individual_internship_details individual_internship_internship">
+                                        <div id=location_names>
+                                            <i class=ic-16-map-pin></i>
+                                            <span>
+                                                <a class="location_link view_detail_button"
+                                                    href=https://internshala.com/internships/internship-in-mumbai>
+                                                    <%= specInternship.specInternship[0].location %>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class=internship_other_details_container>
+                                            <div class=other_detail_item_row>
+                                                <div class=other_detail_item>
+                                                    <div class=item_heading>
+                                                        <i class=ic-16-play-circle></i>
+                                                        <span>
+                                                            Start Date </span>
+                                                    </div>
+                                                    <div class=item_body id=start-date-first>
+                                                        <span
+                                                            class="start_immediately_mobile sf-hidden">Starts&nbsp;immediately</span><span
+                                                            class=start_immediately_desktop>
+                                                            <%= specInternship.specInternship[0].dateOfCreation.slice(0,10)
+                                                                %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class=other_detail_item>
+                                                    <div class=item_heading>
+                                                        <i class=ic-16-calendar></i>
+                                                        <span>Duration</span>
+                                                    </div>
+                                                    <div class=item_body>
+                                                        <%= specInternship.specInternship[0].duration %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=other_detail_item_row>
+                                                <div class="other_detail_item stipend_container">
+                                                    <div class=item_heading>
+                                                        <i class=ic-16-money></i>
+                                                        <span>
+                                                            Stipend </span>
+                                                    </div>
+                                                    <div class=item_body>
+                                                        <span class=stipend><i class=ic-16-currency-inr></i>
+                                                            <%= specInternship.specInternship[0].stipend %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="other_detail_item apply_by">
+                                                    <div class=item_heading>
+                                                        <i class=ic-16-hourglass></i>
+                                                        <span>Apply By</span>
+                                                    </div>
+                                                    <div class=item_body>13 Feb' 23</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=tags_container_outer>
+                                        <div class=posted_by_container>
+                                            <div class=status-container>
+                                                <div class="status status-small status-success"><i
+                                                        class=ic-16-reschedule></i>
+                                                    <%= specInternship.specInternship[0].paidOrUnpaid %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=other_label_container>
+                                            <div class=status-container>
+                                                <div class="status status-small status-inactive">
+                                                    <%= specInternship.specInternship[0].typeOfInternship %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button_container_card is_from_detail_page sf-hidden">
+                                </div>
+                                <div class=button_container>
+                                    <div class=applications_message_container>
+                                        <div class=application_icon>
+                                            <i class=ic-24-profiles></i>
+                                        </div>
+                                        <div class=applications_message>
+                                            <%= specInternship.specInternship[0].totalNumberOfApplicants %> applicants
+                                        </div>
+                                    </div>
+                                    <input type=text class="form-control sf-hidden"
+                                        value="https://internshala.com/internship/detail/web-development-internship-in-mumbai-at-rentkar-switch-to-share1675076557?utm_source=cp_link&amp;referral=web_share"
+                                        id=link name=link hidden>
+                                    <div class="dropdown-menu-container copy_button_popover">
+                                        <span class="share_link_for_mobile btn-group">
+                                            <button class=btn data-toggle=dropdown><i class=ic-24-share></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right menu-right sf-hidden">
+
+
+
+
+
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class=internship_details>
+                                <div class="section_heading heading_5_5">
+                                    About <%= specInternship.specInternship[0].companyName %>
+                                </div>
+                                <div class="text-container website_link">
+                                    <a href=https://www.instagram.com/rentkar_app target=_blank
+                                        rel="nofollow noopener noreferrer">Instagram page <i
+                                            class=ic-16-external-link></i></a>
+                                </div>
+                                <div class="text-container about_company_text_container">
+                                    <%= specInternship.specInternship[0].briefDescription %>
+                                </div>
+                                <div class=activity_section>
+                                    <div class="heading_6 heading_activity">Activity on Internshala</div>
+                                    <div class=activity_container>
+                                        <div class=activity>
+                                            <i class=ic-16-suggested-time></i>
+                                            <div class="text body-main">Hiring since October 2019</div>
+                                        </div>
+                                        <div class=activity>
+                                            <i class=ic-16-job></i>
+                                            <div class="text body-main">510 opportunities posted</div>
+                                        </div>
+                                        <div class=activity>
+                                            <i class=ic-16-hired></i>
+                                            <div class="text body-main">7 candidates hired</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_heading heading_5_5 about_heading">About the internship</div>
+                                <div class=text-container>
+                                    <%= specInternship.specInternship[0].rolesAndResponsibilities %>
+                                </div>
+                                <div class="section_heading heading_5_5 skills_heading">Skill(s) required</div>
+                                <div class=round_tabs_container>
+                                    <% var arr=specInternship.specInternship[0].skillsRequired.split(','); for (var i=0;
+                                        i < arr.length; i++) { %>
+
+                                        <span class="round_tabs">
+                                            <%= arr[i] %>
+                                        </span>
+                                        <% } %>
+
+
+                                </div>
+
+                                <div class="section_heading heading_5_5">Who can apply</div>
+                                <div class="text-container who_can_apply">
+                                    <p style="margin-bottom:4px;color:#484848">
+                                        <%= specInternship.specInternship[0].whoCanApply %>
+                                    </p>
+
+                                </div>
+                                <div class="section_heading heading_5_5 perks_heading">Perks</div>
+                                <div class="round_tabs_container">
+                                    <!-- <span class="round_tabs">Informal dress code</span> -->
+                                    <%= specInternship.specInternship[0].perks %>
+
+                                </div>
+                                <div class="section_heading heading_5_5">Number of openings</div>
+                                <div class="text-container">
+                                    <%= specInternship.specInternship[0].numberOfOpenings %>
+                                </div>
+                                <div class="buttons_container">
+
+                                    <% if (userid !=null) { %>
+                                        <button class="btn btn-large" id="applynow" data-bs-toggle="modal"
+                                            data-bs-target="#applyNowModal">
+                                            Apply now
+                                        </button>
+                                        <% } else { %>
+                                            <a href="/login"><button class="btn btn-large" id="login">
+                                                    Apply now
+                                                </button></a>
+                                            <% } %>
+
+
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="applyNowModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Your application</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+
+
+                                                <form method="post" id="internshipAppForm">
+                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name</label>
+                                                        <input type="text" class="form-control" id="name" name="name"
+                                                            placeholder="Enter your name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="email" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" id="email" name="email"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="phone" class="form-label">Phone</label>
+                                                        <input type="text" class="form-control" id="phone" name="phone"
+                                                            placeholder="Enter your phone number">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="branch" class="form-label">Branch</label>
+                                                        <input type="text" class="form-control" id="branch"
+                                                            name="branch" placeholder="Enter your branch">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="college" class="form-label">College</label>
+                                                        <input type="text" class="form-control" id="college"
+                                                            name="college" placeholder="Enter your college">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="education" class="form-label">Education</label>
+                                                        <input type="text" class="form-control" id="education"
+                                                            name="education" placeholder="Enter your education">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="location" class="form-label">Location</label>
+                                                        <input type="text" class="form-control" id="location"
+                                                            name="location" placeholder="Enter your location">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="stream" class="form-label">Stream</label>
+                                                        <input type="text" class="form-control" id="stream"
+                                                            name="stream" placeholder="Enter your stream">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="university" class="form-label">University</label>
+                                                        <input type="text" class="form-control" id="university"
+                                                            name="university" placeholder="Enter your university">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="semester" class="form-label">Semester</label>
+                                                        <input type="text" class="form-control" id="semester"
+                                                            name="semester" placeholder="Enter your semester">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="resume" class="form-label">Resume</label>
+                                                        <input type="file" class="form-control" id="resume"
+                                                            name="resume" placeholder="Upload your resume">
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                    id="CloseModal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    id="submitInternshipApp">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="modal fade sf-hidden" tabindex="-1" role="dialog" id="questions">
+
+                                </div>
+                                <div class="modal fade sf-hidden" tabindex="-1" role="dialog" id="registration_modal">
+                                    <div class="modal-dialog sf-hidden">
+                                        <div class="modal-content sf-hidden">
+                                            <div class="modal-body sf-hidden">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            console.log("hello");
+
+            $.ajax({
+                url: 'http://localhost:3000/api/studentProfile',
+                type: 'GET',
+                contentType: 'application/json',
+
+                success: function (data) {
+
+                    console.log("here data:", data['user']);
+                    // in all input field of form i want to fill data of student profile
+                    // like name,email,phone,branch,college,education,location,stream,university,semester
+
+                    $('#name').val(data['user'].name);
+                    $('#email').val(data['user'].email);
+                    $('#phone').val(data['user'].phone);
+                    $('#branch').val(data['user'].branch);
+                    $('#college').val(data['user'].college);
+                    $('#education').val(data['user'].education);
+                    $('#location').val(data['user'].location);
+                    $('#stream').val(data['user'].stream);
+                    $('#university').val(data['user'].university);
+                    $('#semester').val(data['user'].semester);
+
+                    // if data['internship'] array contain internship id of internship which is currently open then show button of apply for internship
+                    // else show button of register for internship
+                    // foreach loop for data[internship] and check if data[internship] contain internship id of internship which is currently open
+                    var arr=data['user'].internships;
+                    // console.log(typeof(arr));
+
+                    for(var key in arr){
+                        console.log(arr[key]);
+                            // console.log(internship);
+                            if (arr[key].includes('<%= specInternship.specInternship[0]._id %>')) {
+                                console.log("internship applied");
+                                // disable btn which id is applynow
+                                $('#applynow').attr("disabled", true);
+                                $('#applynow').text("Applied");
+                                break;
+                            }
+                        
+                    }
+
+
+                },
+                error: function (err) {
+                    console.log("error: ", err);
+                }
+
+            })
+
+            $("#submitInternshipApp").on('click', function () {
+                console.log("submit button clicked");
+                // access form data of onput fields
+                var formData = $("#internshipAppForm").serializeArray();
+                var resume = $('#resume').val();
+                var data2 = {}
+                for (var i = 0; i < formData.length; i++) {
+                    data2[formData[i].name] = formData[i].value
+                }
+                data2['resume'] = resume;
+                console.log("form data: ", data2);
+                var data = {
+                    userId: '<%= userid %>',
+                    internshipId: '<%= specInternship.specInternship[0]._id %>'
+
+                }
+
+                console.log("data: ", data);
+                $.ajax({
+                    url: 'http://localhost:3000/api/applyForInternship',
+                    type: 'POST',
+                    data: data,
+
+                    success: function (data) {
+                        console.log("success: ", data);
+                    },
+                    error: function (err) {
+                        console.log("error: ", err);
+                    }
+
+                })
+
+                // update student profile as form data is FileSystemHandle
+
+                $.ajax({
+                    url: 'http://localhost:3000/api/studentProfile',
+                    type: 'POST',
+                    data: data2,
+
+                    success: function (data) {
+                        // close the modal and show success message
+                        $('#CloseModal').click();
+
+                        // scroll to top of page
+                        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+
+                        $('.successalert').append(`
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong>Internship applied successfully.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`);
+
+                        console.log("success: ", data);
+                    },
+                    error: function (err) {
+                        console.log("error: ", err);
+                    }
+
+                })
+            })
+
+
+
+        });
+
+
+    </script>
+
+</body>
+
+
+</html>

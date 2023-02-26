@@ -1,0 +1,44 @@
+.profileImage {
+    width: 100%;
+    padding: 6px;
+    margin-right: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.edit-pen{
+    position: absolute;
+    right: 0;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+/* .apply-card{
+    width: fit-content;
+    
+} */
+
+.apply-section{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-bottom: 2em;
+    
+    
+}
+
+.apply-title{
+    font-weight: bold;
+    text-align: center;
+    margin: 1em;
+    font-size: 2em;
+}
+
+.bunch-card{
+    width: 30%;
+    margin: 1em 1em;
+    border-radius: 60%;
+    
+}

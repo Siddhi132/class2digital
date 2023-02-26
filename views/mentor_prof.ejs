@@ -1,0 +1,161 @@
+<div class="col-lg-8 p-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <!-- <i class="fa-solid fa-pen edit-pen"></i> -->
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Name</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="name" name="name"
+                value="<%= user.mentor.name%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Email</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">
+              <%= user.mentor.email%>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Role</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">
+              <%= user.mentor.role%>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Phone</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"><input type="tel" class="form-control" id="phone" name="phone"
+                value="<%= user.mentor.phone%>"></p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Location</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="location" name="location"
+                value="<%= user.mentor.location%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">OTP</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">1234</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">College</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="college" name="college"
+                value="<%= user.mentor.college%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">University</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="university"
+                name="university" value="<%= user.mentor.university%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Education</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="education"
+                name="education" value="<%= user.mentor.education %>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Background</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="background" name="background"
+                value="<%= user.mentor.background %>">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Branch</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="branch" name="branch"
+                value="<%= user.mentor.branch%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Area of intrest</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="AreaOfIntrest" name="AreaOfIntrest"
+                value="<%= user.mentor.AreaOfIntrest%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Specialization</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <input type="text" class="form-control" id="Specialization" name="Specialization"
+                value="<%= user.mentor.Specialization%>">
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Reward Points</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0"> <%= user.mentor.rewardPoints%>
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content mb-2 ">
+          <button type="submit" class="btn btn-primary ms-3 me-4 mt-5">Update</button>
+          <button type="reset" class="btn btn-outline-primary  ms-3 me-4 mt-5">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>

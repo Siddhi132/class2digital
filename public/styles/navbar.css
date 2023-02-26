@@ -1,0 +1,23 @@
+
+.profileImage {
+    width: 2.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+.navbar-item{
+    margin:0 1.5em;
+    font-size: 1.1em;
+    color: black;
+    
+}
+.profile-dropdown{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}

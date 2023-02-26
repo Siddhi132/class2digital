@@ -1,0 +1,87 @@
+        .login-container {
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            /* margin-top: 10%; */
+            height: 70vh;
+            width:70vw;
+  display: flex;
+  margin: 5% auto;
+  /* border-radius: 3%; */
+}
+
+.image-section {
+  width: 50%;
+  padding: 10px;
+}
+
+.image-section img {
+  height: 100%;
+  width: 100%;
+}
+.form-parent-section{
+    width: 50%;
+  margin:auto 5%;
+    text-align: center;
+}
+.form-section {
+  
+}
+
+.form-section label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-section input[type="submit"] {
+  width: 100%;
+  background-color: rgb(26,115,232);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.paracolor{
+    color: #898989;
+}
+
+/* write media query at 750 px which will make the form section 100% width and image section 0% width */
+@media screen and (max-width: 750px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    width: 0%;
+    height: 0%;
+  }
+
+  .form-parent-section {
+    width: 90%;
+    margin: auto 5%;
+  }
+
+  /* make input field and submit btn resopsive by decresing width to 90% and margin to 5% */
+    .form-section input[type="email"],
+    .form-section input[type="password"],
+    .form-section input[type="submit"],
+    .form-section input[type="text"] {
+      width: 90%;
+      /* margin: 5%; */
+    }
+
+
+}
+
